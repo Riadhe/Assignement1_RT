@@ -41,5 +41,10 @@ install(PROGRAMS
   scripts/turtle_spawn.py
   DESTINATION lib/${PROJECT_NAME}
 )
+# Install Launch Files
+install(DIRECTORY
+  launch
+  DESTINATION share/${PROJECT_NAME}
+)
 
 ament_package()

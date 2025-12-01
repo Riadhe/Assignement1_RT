@@ -12,22 +12,16 @@ This ROS 2 package implements a control system for Turtlesim with two nodes:
     * They get too close to the boundaries (Wall avoidance).
 
 ## How to Run
-To run the full simulation, open please  3 separate terminals.
+To run the full simulation, open please 2 separate terminals.
 
-#### 1. Start the Simulation
+### 1. Launch Simulation & Safety System
+This single command starts the Turtlesim window, spawns the second turtle, and enables the Distance Monitor automatically.
 ```bash
-ros2 run turtlesim turtlesim_node
+ros2 launch assignment1_rt assignment1.launch.py
 ```
 
-#### 2. Spawn Turtle & Start Safety System
-This spawns turtle2 and starts the C++ distance monitor.
-```bash
-ros2 run assignment1_rt turtle_spawn.py
-ros2 run assignment1_rt distance_monitor
-```
-
-#### 3. Run the UI Controller
-Use this terminal to send commands.
+#### 2. Run the UI Controller
+In a second terminal, start the remote control UI to send commands.
 ```bash
 ros2 run assignment1_rt ui_node.py
 ```
@@ -38,3 +32,4 @@ ros2 run assignment1_rt ui_node.py
 * `src/distance_monitor.cpp`: C++ source code implementing the distance calculation and safety logic.
 * `CMakeLists.txt`: Configuration for building the mixed C++/Python package.
 * `package.xml`: Defines dependencies (rclcpp, rclpy, turtlesim, geometry_msgs, std_msgs).
+* `launch/assignment1.launch.py`: Additional python script that launch/start our nodes at the same time .
